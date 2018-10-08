@@ -1,0 +1,3 @@
+Vous avez déjà commencé à faire des calculs et vous vous êtes rendu compte que vous aviez besoin de ce nombre à partir de 3 calculs précédents?
+
+Number Cruncher Calculator vous permet de stocker des résultats spécifiques à utiliser ultérieurement! En appuyant simplement sur un bouton, vous pouvez stocker les résultats pour les utiliser dans des calculs ultérieurs.

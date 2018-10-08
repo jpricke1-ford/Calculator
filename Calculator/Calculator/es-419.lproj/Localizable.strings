@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Calculator
+
+  Created by LincolnWay on 10/5/18.
+  Copyright © 2018 Christopher Thiebaut. All rights reserved.
+*/
+
+"error" = "Error";
+"use" = "Utilizar:";
+"overwrite" = "Reemplazar:";
+"store" = "Poner en Reserva:";

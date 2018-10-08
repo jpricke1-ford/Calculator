@@ -1,0 +1,3 @@
+Ever start doing calculations, and realize that you needed that number from 3 calculations ago? 
+
+Number Cruncher Calculator allows you to STORE specific results to use later on! With the simple push of a button you are able to store results to be used in later calculations.

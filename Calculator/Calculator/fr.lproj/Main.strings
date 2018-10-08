@@ -1,0 +1,63 @@
+
+/* Class = "UIButton"; normalTitle = "Save Number"; ObjectID = "1Go-ap-cQb"; */
+"1Go-ap-cQb.normalTitle" = "Numéro de Sauvegarde";
+
+/* Class = "UIButton"; normalTitle = "4"; ObjectID = "1OS-xR-5Yy"; */
+"1OS-xR-5Yy.normalTitle" = "4";
+
+/* Class = "UIButton"; normalTitle = "7"; ObjectID = "2jy-nj-WlW"; */
+"2jy-nj-WlW.normalTitle" = "7";
+
+/* Class = "UIButton"; normalTitle = "1"; ObjectID = "3V6-Ho-qXi"; */
+"3V6-Ho-qXi.normalTitle" = "1";
+
+/* Class = "UIButton"; normalTitle = "."; ObjectID = "BXj-sL-zeb"; */
+"BXj-sL-zeb.normalTitle" = ".";
+
+/* Class = "UIButton"; normalTitle = "⌫"; ObjectID = "Bb0-dE-MTL"; */
+"Bb0-dE-MTL.normalTitle" = "⌫";
+
+/* Class = "UIButton"; normalTitle = "2"; ObjectID = "C50-WA-WrO"; */
+"C50-WA-WrO.normalTitle" = "2";
+
+/* Class = "UIButton"; normalTitle = "8"; ObjectID = "FHl-W0-gBE"; */
+"FHl-W0-gBE.normalTitle" = "8";
+
+/* Class = "UIButton"; normalTitle = "6"; ObjectID = "Gx5-Pz-b2C"; */
+"Gx5-Pz-b2C.normalTitle" = "6";
+
+/* Class = "UIButton"; normalTitle = "Save Value"; ObjectID = "HWS-n8-DjG"; */
+"HWS-n8-DjG.normalTitle" = "Enregistrer la Valeur";
+
+/* Class = "UIButton"; normalTitle = "+/-"; ObjectID = "IMN-TH-Jfa"; */
+"IMN-TH-Jfa.normalTitle" = "+/-";
+
+/* Class = "UIButton"; normalTitle = "="; ObjectID = "M75-Cf-3vP"; */
+"M75-Cf-3vP.normalTitle" = "=";
+
+/* Class = "UIButton"; normalTitle = "5"; ObjectID = "OaL-9w-JWb"; */
+"OaL-9w-JWb.normalTitle" = "5";
+
+/* Class = "UIButton"; normalTitle = "0"; ObjectID = "VsD-Mr-5hp"; */
+"VsD-Mr-5hp.normalTitle" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "XM3-w6-yMe"; */
+"XM3-w6-yMe.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "9"; ObjectID = "Y1g-1p-QCU"; */
+"Y1g-1p-QCU.normalTitle" = "9";
+
+/* Class = "UIButton"; normalTitle = "÷"; ObjectID = "cJc-9j-NtA"; */
+"cJc-9j-NtA.normalTitle" = "÷";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "f7E-Wz-dji"; */
+"f7E-Wz-dji.normalTitle" = "-";
+
+/* Class = "UIButton"; normalTitle = "3"; ObjectID = "iDO-1y-7lj"; */
+"iDO-1y-7lj.normalTitle" = "3";
+
+/* Class = "UIButton"; normalTitle = "x"; ObjectID = "qJW-Nt-Yc9"; */
+"qJW-Nt-Yc9.normalTitle" = "x";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "sMP-mE-ayH"; */
+"sMP-mE-ayH.normalTitle" = "+";
