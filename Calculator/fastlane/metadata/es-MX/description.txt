@@ -1,0 +1,3 @@
+¿Alguna vez has empezado a hacer cálculos y te has dado cuenta de que necesitabas ese número de hace 3 cálculos?
+
+¡La calculadora de Number Cruncher te permite GUARDAR resultados específicos para usar más adelante! Con solo presionar un botón, puede almacenar los resultados para usarlos en cálculos posteriores.

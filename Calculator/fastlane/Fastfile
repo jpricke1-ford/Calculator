@@ -1,0 +1,88 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new beta build to TestFlight"
+  lane :test_flight do
+    gym(
+      scheme: "Calculator",
+      build_path: "./build",
+      buildlog_path: "tmp",
+      xcargs: "-verbose"
+    )
+
+    ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
+
+    # PILOT PARAMETERS POSSIBLE
+    # ------------------------------------
+    # app_identifier
+    # app_platform
+    # ipa
+    # changelog
+    # beta_app_description
+    # beta_app_feedback_email
+    # skip_submission
+    # skip_waiting_for_build_processing
+    # apple_id
+    # distribute_external
+    # notify_external_testers
+    # demo_account_required
+    # first_name
+    # last_name
+    # email
+    # testers_file_path
+    # wait_processing_interval
+    # team_id
+    # team_name
+    # dev_portal_team_id
+    # itc_provider
+    # groups
+
+    upload_to_testflight(
+      changelog: "Update bug found.",
+      distribute_external: true,
+      notify_external_testers: true,
+      testers_file_path: "./testers/ford_testers_export.csv",
+      reject_build_waiting_for_review: true
+    )
+  end
+
+  desc "Submit to the AppStore"
+  lane :app_store do
+    gym(
+      scheme: "Calculator",
+      build_path: "./build",
+      buildlog_path: "tmp",
+      xcargs: "-verbose"
+    )
+
+    ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
+
+    upload_to_app_store(
+      username: "jprickett821@gmail.com",
+      metadata_path: "./fastlane/metadata",
+      screenshots_path: "./fastlane/screenshots",
+      phased_release: false,
+      force: true
+    )
+  end
+
+  desc "Submit latest TF Build to AppStore"
+  lane :submit_app_store_latest do
+    sh("fastlane deliver submit_build --build-number latest")
+  end
+end

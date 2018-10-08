@@ -1,2 +1,2 @@
-# Calculator-POC
-POC for Automating AppStore/TF Submissions
+# Calculator
+This is a simple calculator focused on usability which allows the user to store values for use in future calculations.
