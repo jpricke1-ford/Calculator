@@ -3,3 +3,6 @@ build/
 DerivedData/
 *.ipa
 tmp
+
+pbxuser
+xcuserdata
