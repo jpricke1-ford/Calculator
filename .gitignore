@@ -1,0 +1,5 @@
+Calculator/Calculator.xcodeproj/project.xcworkspace/xcuserdata/*
+build/
+DerivedData/
+*.ipa
+tmp
