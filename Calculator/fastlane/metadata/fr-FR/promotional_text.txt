@@ -1,1 +1,2 @@
-Lancement initial!
+Ajout de la possibilité d'effacer les valeurs stockées en secouant simplement votre téléphone!
+

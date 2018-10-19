@@ -16,64 +16,39 @@
 default_platform(:ios)
 
 platform :ios do
+
   desc "Push a new beta build to TestFlight"
   lane :test_flight do
-    gym(
-      scheme: "Calculator",
-      build_path: "./build",
-      buildlog_path: "tmp",
-      xcargs: "-verbose"
-    )
+
+    build
+
+    resign_ipa
 
     ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
 
-    # PILOT PARAMETERS POSSIBLE
-    # ------------------------------------
-    # app_identifier
-    # app_platform
-    # ipa
-    # changelog
-    # beta_app_description
-    # beta_app_feedback_email
-    # skip_submission
-    # skip_waiting_for_build_processing
-    # apple_id
-    # distribute_external
-    # notify_external_testers
-    # demo_account_required
-    # first_name
-    # last_name
-    # email
-    # testers_file_path
-    # wait_processing_interval
-    # team_id
-    # team_name
-    # dev_portal_team_id
-    # itc_provider
-    # groups
-
     upload_to_testflight(
-      changelog: "Update bug found.",
+      ipa: "./build/Calculator.ipa", 
+      changelog: "Add Shake Gesture to clear stored information",
       distribute_external: true,
       notify_external_testers: true,
       testers_file_path: "./testers/ford_testers_export.csv",
+      groups: ["Ford Testers"],
       reject_build_waiting_for_review: true
     )
   end
 
   desc "Submit to the AppStore"
-  lane :app_store do
-    gym(
-      scheme: "Calculator",
-      build_path: "./build",
-      buildlog_path: "tmp",
-      xcargs: "-verbose"
-    )
+  lane :app_store do |options|
+    
+    build
+
+    resign_ipa
 
     ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
 
     upload_to_app_store(
       username: "jprickett821@gmail.com",
+      app_version: options[:version_number],
       metadata_path: "./fastlane/metadata",
       screenshots_path: "./fastlane/screenshots",
       phased_release: false,
@@ -82,7 +57,33 @@ platform :ios do
   end
 
   desc "Submit latest TF Build to AppStore"
-  lane :submit_app_store_latest do
-    sh("fastlane deliver submit_build --build-number latest")
+  lane :submit_latest_build do
+    sh("cd .. ; fastlane deliver submit_build --force --build-number latest")
   end
+
+  # Helper Stuff
+
+  desc "Build App with Development Profile/Cert"
+  lane :build do
+    gym(
+      scheme: "Calculator",
+      export_method: "app-store",
+      build_path: "./build",
+      output_directory: "./build",
+      buildlog_path: "tmp",
+      xcargs: "-verbose"
+    )
+  end
+
+  desc "Resign App with Distribution Profile/Cert"
+  lane :resign_ipa do
+    sigh(
+      output_path: "./profiles"
+    )
+    resign(
+      ipa: "./build/Calculator.ipa", 
+      signing_identity: "iPhone Distribution: Jacob Prickett (24DLJQTAR9)"
+    )
+  end
+
 end

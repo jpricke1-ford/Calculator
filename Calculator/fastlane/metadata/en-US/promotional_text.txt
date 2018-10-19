@@ -1,1 +1,1 @@
-Initial launch!
+Added ability to clear stored values by simply shaking your phone!

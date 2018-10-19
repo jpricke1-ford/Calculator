@@ -10,3 +10,7 @@
 "use" = "Use:";
 "overwrite" = "Overwrite:";
 "store" = "Store:";
+"clear_title" = "Clear Values";
+"clear_confirmation" = "Are you sure you want to clear your stored values?";
+"clear" = "Clear";
+

@@ -1,1 +1,1 @@
-Lanzamiento inicial!
+Se agregó la capacidad de borrar los valores almacenados simplemente agitando su teléfono.

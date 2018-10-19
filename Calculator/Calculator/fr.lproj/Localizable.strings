@@ -10,3 +10,6 @@
 "use" = "Utilisation:";
 "overwrite" = "Écraser:";
 "store" = "Stocker:";
+"clear_title" = "Valeurs claires";
+"clear_confirmation" = "Êtes-vous sûr de vouloir effacer vos valeurs stockées?";
+"clear" = "Clair";
