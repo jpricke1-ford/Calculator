@@ -26,6 +26,21 @@ Push a new beta build to TestFlight
 fastlane ios app_store
 ```
 Submit to the AppStore
+### ios submit_latest_build
+```
+fastlane ios submit_latest_build
+```
+Submit latest TF Build to AppStore
+### ios build
+```
+fastlane ios build
+```
+Build App with Development Profile/Cert
+### ios resign_ipa
+```
+fastlane ios resign_ipa
+```
+Resign App with Distribution Profile/Cert
 
 ----
 

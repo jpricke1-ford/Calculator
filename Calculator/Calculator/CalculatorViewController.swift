@@ -255,7 +255,7 @@ class CalculatorViewController: UIViewController {
     /**
         If the number being displayed has not already been sent to the mathController, sends the number being displayed to the mathController as an operand and marks the number being displayed as overwiteable so the next change will replace it instead of appending to it.  The displayed number is not reset to zero because that would create a situation in which it appears to the user they are about to perform an operation with zero, but the operation would be performed with the most recent value instead.
      */
-    private func pushOperand(){
+    private func pushOperand() {
         guard !pushedOperand else {
             NSLog("Did not push operand because the user hasn't done any input since an operand was pushed.")
             return
@@ -265,7 +265,6 @@ class CalculatorViewController: UIViewController {
             displayNumber = 0
             hasDecimal = false
             overwriteDisplayedNumber = true
-//            updateDisplay()
             pushedOperand = true
         }catch let error {
             NSLog("Error pushing operand in preparation to push operator: \(error.localizedDescription)")
@@ -451,6 +450,41 @@ extension CalculatorViewController : MathControllerDelegate {
         updateDisplay()
         overwriteDisplayedNumber = true
         pushedOperand = false
+    }
+}
+
+extension CalculatorViewController {
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            if storedNumber1 != 0 || storedNumber2 != 0 {
+                displayAlert()
+            }
+        }
+    }
+    
+    private func displayAlert() {
+        let alertController = UIAlertController(title: NSLocalizedString("clear_title", comment: ""),
+                                                message: NSLocalizedString("clear_confirmation", comment: ""),
+                                                preferredStyle: .alert)
+        
+        let action1 = UIAlertAction(title: NSLocalizedString("clear", comment: ""), style: .destructive) { [weak self] _ in
+            PersistenceController.clearStoredValues()
+            self?.storedNumber1 = PersistenceController.loadValues()?.storedValue1 ?? 0
+            PersistenceController.clearStoredValues()
+            self?.storedNumber2 = PersistenceController.loadValues()?.storedValue2 ?? 0
+            self?.updateStoreButtonStates()
+            self?.displayNumber = 0
+        }
+        
+        let action2 = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
